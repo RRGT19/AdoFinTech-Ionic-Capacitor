@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+
+      <!-- navigation button -->
+      <ion-menu-button></ion-menu-button>
+
+    </ion-buttons>
+
+    <ion-title>Google Maps</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <agm-map [latitude]="lat"
+           [longitude]="lng"
+           [zoom]="zoom"
+           [disableDefaultUI]="false"
+           (mapReady)="mapReady($event)">
+
+    <button id="center" (click)="center()">
+      <ion-icon name="locate-outline"></ion-icon>
+    </button>
+
+    <agm-marker *ngFor="let p of markers; index as i"
+                (markerClick)="clickedMarker(p, i)"
+                [iconUrl]="p.iconUrl"
+                [label]="p.name"
+                [latitude]="p.lat"
+                [longitude]="p.lng">
+
+      <agm-info-window>
+        <strong>{{p.name}}</strong>
+      </agm-info-window>
+
+    </agm-marker>
+
+    <agm-circle [latitude]="lat + 0.3"
+                [longitude]="lng"
+                [radius]="20000"
+                [fillColor]="'red'">
+    </agm-circle>
+
+  </agm-map>
+
+</ion-content>

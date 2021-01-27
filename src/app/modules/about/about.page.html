@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+
+      <!-- back button -->
+      <ion-back-button defaultHref="/tabs/dashboard"></ion-back-button>
+
+    </ion-buttons>
+
+    <ion-title>Acerca de</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="ion-margin-top">
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center">
+          <img src="assets/imgs/logo.png" alt="Logo" width="170">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-margin-top" *ngIf="appVersion">
+    v{{appVersion}}
+  </div>
+
+</ion-content>

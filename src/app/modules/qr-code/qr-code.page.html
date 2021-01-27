@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+
+      <!-- navigation button -->
+      <ion-menu-button></ion-menu-button>
+
+    </ion-buttons>
+
+    <ion-title>QR Code</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="ion-text-center">
+    <ion-button (click)="scan()">Scan</ion-button>
+
+    <div *ngIf="code">
+      <p>
+        <ion-label>Code is:</ion-label>
+      </p>
+
+      <pre>{{code|json}}</pre>
+    </div>
+  </div>
+
+</ion-content>
